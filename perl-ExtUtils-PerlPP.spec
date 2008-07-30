@@ -1,6 +1,6 @@
 %define module	ExtUtils-PerlPP
 %define version 0.03
-%define release %mkrel 9
+%define release %mkrel 11
 
 Summary:	%{module} module for perl
 Name:		perl-%{module}
