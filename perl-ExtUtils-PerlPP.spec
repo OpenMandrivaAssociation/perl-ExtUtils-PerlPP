@@ -1,25 +1,24 @@
-%define module	ExtUtils-PerlPP
-%define version 0.03
-%define release %mkrel 11
+%define upstream_name	 ExtUtils-PerlPP
+%define upstream_version 0.03
 
-Summary:	%{module} module for perl
-Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	%{upstream_name} module for perl
 License:	GPL
 Group:		Development/Perl
-Source0:	%{module}-%{version}.tar.bz2
 Url:		http://www.cpan.org
-BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
-Requires:	perl >= 0:5.600
+Source0:	%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{module} module for perl
+%{upstream_name} module for perl
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -40,5 +39,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{perl_vendorlib}/ExtUtils
 %{_mandir}/*/*
-
-
