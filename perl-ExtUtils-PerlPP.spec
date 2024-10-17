@@ -8,7 +8,7 @@ Release:	4
 Summary:	%{upstream_name} module for perl
 License:	GPL
 Group:		Development/Perl
-Url:		http://www.cpan.org
+Url:		https://www.cpan.org
 Source0:	%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
